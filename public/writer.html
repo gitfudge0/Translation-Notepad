@@ -1,0 +1,41 @@
+<div layout="row" layout-wrap layout-align="center center">
+	<div flex="50" flex-gt-sm="20" style="margin-top: 20px;">
+		<md-card class="md-padding">
+			<md-input-container>
+				<label>Select Language</label>
+				<md-select ng-model="selectedlang">
+					<md-option ng-repeat="lang in langs" value="{{lang.short}}">
+						{{lang.long}}
+					</md-option>
+				</md-select>	
+			</md-input-container>
+		</md-card>
+	</div>
+	<div flex="50" flex-gt-sm="80" style="padding-left: 20px;">
+		<h1  style="font-size: 80px; font-weight: 100;">Translation Notepad</h1>
+	</div>
+	<div flex="100" layout-gt-sm="row" layout="column" layout-align="center stretch">
+		<div flex="50">
+			<md-card class="md-padding">
+				<md-input-container>
+					<label>Your content</label>
+					<textarea rows="20" ng-model="userinput" ng-change="translate()"></textarea>
+				</md-input-container>
+			</md-card>	
+		</div>
+		<div flex="50">
+			<md-card class="md-padding">
+				<p>{{storage.result}}</p>
+			</md-card>	
+		</div>	
+	</div>
+</div>
+
+<style>
+	md-content {
+		background: white;
+	}
+	textarea {
+		resize: none;
+	}
+</style>
